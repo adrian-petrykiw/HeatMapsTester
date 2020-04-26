@@ -2,6 +2,7 @@ package com.example.heatmapstesterandimplement;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,15 +24,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        Intent makeheatmap = new Intent(this, HeatMaps.class);
+        startActivity(makeheatmap);
     }
+
     public GoogleMap getmMap() {
         return mMap;
     }
 
-    public void runheatmap() {
-        HeatMap work = new HeatMap();
-        work.addHeatMap();
-    }
 
     /**
      * Manipulates the map once available.
